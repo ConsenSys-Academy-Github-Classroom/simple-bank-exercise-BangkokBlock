@@ -77,7 +77,7 @@ contract SimpleBank {
     /// @return The balance of the user after the deposit is made
     function deposit() public payable onlyEnrolled returns (uint) {
           balances[msg.sender] += msg.value;
-          emit LogDepositMade (msg.sender, balances[msg.sender]);
+          emit LogDepositMade (msg.sender, msg.value);
           return balances[msg.sender];
     }
 
